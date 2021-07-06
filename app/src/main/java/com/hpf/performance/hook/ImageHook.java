@@ -22,6 +22,11 @@ public class ImageHook extends XC_MethodHook {
         LogUtils.i("afterHookedMethod");
     }
 
+    @Override
+    protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
+        super.beforeHookedMethod(param);
+        LogUtils.i("beforeHookedMethod");
+    }
 
     private static void checkBitmap(Object thiz, Drawable drawable) {
         if (drawable instanceof BitmapDrawable && thiz instanceof View) {
